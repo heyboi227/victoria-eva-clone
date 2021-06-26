@@ -54,6 +54,12 @@
             {/foreach}
         </table>
     {/if}
+    {if $page > 1}
+        <a href="index.php?page={$page - 1}">Previous page</a>
+    {/if}
+    {if $page < $totalPages}
+        <a href="index.php?page={$page + 1}">Next page</a>
+    {/if}
     <a href="addairline.php">Add new airline</a>
 </body>
 
