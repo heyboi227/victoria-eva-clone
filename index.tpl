@@ -16,6 +16,10 @@
         <p>There are no airlines currently in database.</p>
     {else}
         <div class="container-fluid">
+            <div class="d-flex justify-content-end nav">
+                <a class="p-2" href="login.php">Login</a>
+                <a class="p-2" href="signup.php">Signup</a>
+            </div>
             <h4>Search filters</h4>
             <form action="filterairlines.php" method="POST">
                 <select name="selectCountry" onchange="this.form.submit();">
