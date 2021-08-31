@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else if (!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))) {
         $usernameErr = "Username can only contain letters, numbers, and underscores.";
     } else {
-        $sql = "SELECT user_id FROM user WHERE username = ?";
+        $sql = "SELECT `user_id` FROM user WHERE username = ?";
 
         if ($stmt = mysqli_prepare($DB, $sql)) {
             mysqli_stmt_bind_param($stmt, "s", $param_username);
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else if (!preg_match('/^[a-zA-Z0-9_]+@[a-z]+\.[a-z]+$/', trim($_POST["email"]))) {
         $emailErr = "Please enter a valid email.";
     } else {
-        $sql = "SELECT user_id FROM user WHERE email_address = ?";
+        $sql = "SELECT `user_id` FROM user WHERE email_address = ?";
 
         if ($stmt = mysqli_prepare($DB, $sql)) {
             mysqli_stmt_bind_param($stmt, "s", $param_email);
@@ -121,11 +121,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <style>
         body {
             font: 14px sans-serif;
-        }
-
-        .wrapper {
-            width: 360px;
-            padding: 20px;
         }
     </style>
 </head>

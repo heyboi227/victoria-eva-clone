@@ -17,8 +17,14 @@
     {else}
         <div class="container-fluid">
             <div class="d-flex justify-content-end nav">
-                <a class="p-2" href="login.php">Login</a>
-                <a class="p-2" href="signup.php">Signup</a>
+                {if !isset($loggedIn) || $loggedIn !== true}
+                    <a class="p-2" href="login.php">Login</a>
+                    <a class="p-2" href="signup.php">Signup</a>
+                {else}
+                    <p>Hello, <strong>{$username}!</strong></p>
+                    <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
+                    <a href="logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a>
+                {/if}
             </div>
             <h4>Search filters</h4>
             <form action="filterairlines.php" method="POST">
