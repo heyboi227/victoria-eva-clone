@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AirBase</title>
-    <link rel="stylesheet" type="text/css" href="main.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
@@ -16,15 +15,18 @@
         <p>There are no airlines currently in database.</p>
     {else}
         <div class="container-fluid">
-            <div class="d-flex justify-content-end nav">
-                {if !isset($loggedIn) || $loggedIn !== true}
-                    <a class="p-2" href="login.php">Login</a>
-                    <a class="p-2" href="signup.php">Signup</a>
-                {else}
-                    <p>Hello, <strong>{$username}!</strong></p>
-                    <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
-                    <a href="logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a>
-                {/if}
+            <div class="d-flex justify-content-between align-items-center nav">
+                <img src="img/logo.png" width="70px" />
+                <div class="auth">
+                    {if !isset($loggedIn) || $loggedIn !== true}
+                        <a class="p-2" href="login.php">Login</a>
+                        <a class="p-2" href="signup.php">Signup</a>
+                    {else}
+                        <p>Hello, <strong>{$username}!</strong></p>
+                        <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
+                        <a href="logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a>
+                    {/if}
+                </div>
             </div>
             <h4>Search filters</h4>
             <form action="filterairlines.php" method="POST">
@@ -35,7 +37,7 @@
                     {/foreach}
                 </select>
             </form>
-            <table class="table table-sm">
+            <table class="table table-sm text-white">
                 <thead>
                     <tr>
                         <th scope="col">IATA Code</th>
