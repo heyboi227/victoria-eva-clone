@@ -37,7 +37,7 @@
                     {/foreach}
                 </select>
             </form>
-            <table class="table table-sm text-white">
+            <table class="table table-sm">
                 <thead>
                     <tr>
                         <th scope="col">IATA Code</th>
