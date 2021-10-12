@@ -24,9 +24,15 @@ document.addEventListener('DOMContentLoaded', function () {
             listMenus.forEach(menu => {
                 menu.style.padding = "20px 10px";
             });
-            listMenuContainers.forEach(container => {
-                container.style.top = "60px";
-            });
+            if (window.outerWidth <= 1105) {
+                listMenuContainers.forEach(container => {
+                    container.style.top = "75px";
+                });
+            } else {
+                listMenuContainers.forEach(container => {
+                    container.style.top = "60px";
+                });
+            }
         } else {
             logo.style.display = "initial";
             header.classList.remove("header-bg");

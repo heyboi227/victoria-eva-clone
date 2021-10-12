@@ -205,43 +205,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="form-group">
                             <label>Username</label>
                             <div class="form-input">
-                                <input type="text" name="username" class="form-control <?php echo (!empty($usernameErr)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                                <span class="alert"><?php echo $usernameErr; ?></span>
+                                <input type="text" name="username" placeholder="<?php echo (empty($username)) ? $usernameErr : ''; ?>" class="form-control <?php echo (!empty($usernameErr)) ? 'is-invalid' : '';
+                                                                                                                                                            echo (empty($username)) ? ' alert' : ''; ?>" value="<?php echo $username; ?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Email</label>
                             <div class="form-input">
-                                <input type="text" name="email" class="form-control <?php echo (!empty($emailErr)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>">
-                                <span class="alert"><?php echo $emailErr; ?></span>
+                                <input type="text" name="email" placeholder="<?php echo (empty($email)) ? $emailErr : ''; ?>" class="form-control <?php echo (!empty($emailErr)) ? 'is-invalid' : '';
+                                                                                                                                                    echo (empty($email)) ? ' alert' : ''; ?>" value="<?php echo $email; ?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <label>First Name</label>
                             <div class="form-input">
-                                <input type="text" name="first_name" class="form-control <?php echo (!empty($firstNameErr)) ? 'is-invalid' : ''; ?>" value="<?php echo $firstName; ?>">
-                                <span class="alert"><?php echo $firstNameErr; ?></span>
+                                <input type="text" name="first_name" placeholder="<?php echo (empty($firstName)) ? $firstNameErr : ''; ?>" class="form-control <?php echo (!empty($firstNameErr)) ? 'is-invalid' : '';
+                                                                                                                                                                echo (empty($firstName)) ? ' alert' : ''; ?>" value="<?php echo $firstName; ?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Last Name</label>
                             <div class="form-input">
-                                <input type="text" name="last_name" class="form-control <?php echo (!empty($lastNameErr)) ? 'is-invalid' : ''; ?>" value="<?php echo $lastName; ?>">
-                                <span class="alert"><?php echo $lastNameErr; ?></span>
+                                <input type="text" name="last_name" placeholder="<?php echo (empty($lastName)) ? $lastNameErr : ''; ?>" class="form-control <?php echo (!empty($lastNameErr)) ? 'is-invalid' : '';
+                                                                                                                                                            echo (empty($lastName)) ? ' alert' : ''; ?>" value="<?php echo $lastName; ?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
                             <div class="form-input">
-                                <input type="password" name="password" class="form-control <?php echo (!empty($passwordErr)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
-                                <span class="alert"><?php echo $passwordErr; ?></span>
+                                <input type="password" name="password" placeholder="<?php echo (empty($password)) ? $passwordErr : ''; ?>" class="form-control <?php echo (!empty($passwordErr)) ? 'is-invalid' : '';
+                                                                                                                                                                echo (empty($password)) ? ' alert' : ''; ?>" value="<?php echo $password; ?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Confirm Password</label>
                             <div class="form-input">
-                                <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirmPasswordErr)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirmPassword; ?>">
-                                <span class="alert"><?php echo $confirmPasswordErr; ?></span>
+                                <input type="password" name="confirm_password" placeholder="<?php echo (empty($confirmPassword)) ? $confirmPasswordErr : ''; ?>" class="form-control <?php echo (!empty($confirmPasswordErr)) ? 'is-invalid' : '';
+                                                                                                                                                                                        echo (empty($confirmPassword)) ? ' alert' : ''; ?>" value="<?php echo $confirmPassword; ?>">
                             </div>
                         </div>
                     </div>

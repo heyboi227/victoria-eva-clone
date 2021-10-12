@@ -97,16 +97,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div id="container">
         <div id="header-container">
-            <header>
-                <div id="logo">
-                    <img src="img/logo_gold.png" alt="Site logo" />
-                    <p>Your beauty is our duty</p>
+            <div id="header">
+                <div id="logo-wrapper">
+                    <div id="logo">
+                        <a href="index.php"><img src="img/logo_gold.png" alt="Site logo" /></a>
+                        <p>Your beauty is our duty</p>
+                    </div>
+                    <div id="btn-mobile">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </div>
                 </div>
                 <div id="nav-auth">
                     <div id="nav">
                         <ul class="nav-links">
                             <li><a href="index.php">Home</a></li>
-                            <li><a href="about.php">About us</a></li>
+                            <li><a href="#">About us</a></li>
                             <li class="services-link link-dropdown-menu"><a href="#" id="services-list-drop">Services <i class="fas fa-chevron-down fa-xs"></i></a>
                                 <div id="services-list-container">
                                     <ul class="services-list">
@@ -125,24 +130,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="shop.php">Online shop</a></li>
-                            <li><a href="blog.php">Blog</a></li>
-                            <li><a href="contact.php">Contact</a></li>
+                            <li><a href="#">Online shop</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
                         </ul>
                     </div>
                     <div id="auth">
                         <?php if (!(isset($_SESSION['loggedin']) && $_SESSION["loggedin"] === true)) {
-                            echo "<a href='signup.php' class='signup-btn active'>Sign Up</a>";
-                            echo "<a href='login.php'>Login</a>";
+                            echo "<a href='signup.php' class='signup-btn'>Sign Up</a>";
+                            echo "<a href='login.php' class='active'>Login</a>";
+                            echo "<div id='edit-profile'>";
+                            echo "<ul class='edit-profile-list'>";
+                            echo "<li><a href='edit-profile.php'>Edit profile</a></li>";
+                            echo "<li><a href='logout.php'>Logout</a></li>";
+                            echo "</ul>";
+                            echo "</div>";
                         } else {
                             echo "<div class='profile-info'>";
                             echo "<i class='fas fa-user fa-2x'></i>" . "<p>" . $_SESSION['username'] . "</p>";
+                            echo "<div id='edit-profile'>";
+                            echo "<ul class='edit-profile-list'>";
+                            echo "<li><a href='edit-profile.php'>Edit profile</a></li>";
+                            echo "<li><a href='logout.php'>Logout</a></li>";
+                            echo "</ul>";
                             echo "</div>";
-                            echo "<a href='logout.php' class='logout-btn'>Logout</a>";
+                            echo "</div>";
                         } ?>
                     </div>
                 </div>
-            </header>
+            </div>
         </div>
         <div class="clearfix"></div>
         <div class="edit-profile-area">

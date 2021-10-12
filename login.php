@@ -176,15 +176,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="form-group">
                             <label>Username</label>
                             <div class="form-input">
-                                <input type="text" name="username" class="form-control <?php echo (!empty($usernameErr)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                                <span class="alert"><?php echo $usernameErr; ?></span>
+                                <input type="text" name="username" placeholder="<?php echo (empty($username)) ? $usernameErr : ''; ?>" class="form-control <?php echo (!empty($usernameErr)) ? 'is-invalid' : '';
+                                                                                                                                                            echo (empty($username)) ? ' alert' : ''; ?>" value="<?php echo $username; ?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
                             <div class="form-input">
-                                <input type="password" name="password" class="form-control <?php echo (!empty($passwordErr)) ? 'is-invalid' : ''; ?>">
-                                <span class="alert"><?php echo $passwordErr; ?></span>
+                                <input type="password" name="password" placeholder="<?php echo (empty($password)) ? $passwordErr : ''; ?>" class="form-control <?php echo (!empty($passwordErr)) ? 'is-invalid' : '';
+                                                                                                                                                                echo (empty($password)) ? ' alert' : ''; ?>">
                             </div>
                         </div>
                     </div>
