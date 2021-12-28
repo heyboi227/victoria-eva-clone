@@ -11,10 +11,10 @@ $airlineID = (int) $_POST['airline_id'];
 $registration = mysqli_real_escape_string($DB, $_POST['registration']);
 $manufacturer = mysqli_real_escape_string($DB, $_POST['manufacturer']);
 $type = mysqli_real_escape_string($DB, $_POST['type']);
-$msn = mysqli_real_escape_string($DB, $_POST['msn']);
+$msn = (int) $_POST['msn'];
 $name = mysqli_real_escape_string($DB, $_POST['name']);
 
-$query = mysqli_query($DB, "UPDATE aircraft SET airline_id = $airlineID, registration = '$registration', manufacturer = '$manufacturer', `type` = '$type', msn = '$msn', `name` = '$name' WHERE aircraft_id = $aircraftID");
+$query = mysqli_query($DB, "UPDATE aircraft SET airline_id = $airlineID, registration = '$registration', manufacturer = '$manufacturer', `type` = '$type', msn = $msn, `name` = '$name' WHERE aircraft_id = $aircraftID");
 
 if (!$query) {
     die(mysqli_error($DB));
